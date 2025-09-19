@@ -92,7 +92,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods,   2 passed</span>
+                    <span class="method-stats">4 methods,   4 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -103,12 +103,22 @@
                     <div class="method-list-content passed suite-eCommerce_Suite_Test">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-eCommerce_Suite_Test" title="com.juaracoding.ecommerce.authentications.SignInNegativeTest" class="method navigator-link" hash-for-method="withEmptyPasswordTest">withEmptyPasswordTest</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-eCommerce_Suite_Test" title="com.juaracoding.ecommerce.commons.RadioCheckboxTest" class="method navigator-link" hash-for-method="checkBoxTest">checkBoxTest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-eCommerce_Suite_Test" title="com.juaracoding.ecommerce.authentications.SignInNegativeTest" class="method navigator-link" hash-for-method="withoutCredentialsTest">withoutCredentialsTest</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-eCommerce_Suite_Test" title="com.juaracoding.ecommerce.commons.RadioCheckboxTest" class="method navigator-link" hash-for-method="checkBoxsTest">checkBoxsTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-eCommerce_Suite_Test" title="com.juaracoding.ecommerce.commons.RadioCheckboxTest" class="method navigator-link" hash-for-method="radioButtonTest">radioButtonTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-eCommerce_Suite_Test" title="com.juaracoding.ecommerce.commons.RadioCheckboxTest" class="method navigator-link" hash-for-method="radioButtonsTest">radioButtonsTest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-eCommerce_Suite_Test -->
@@ -126,21 +136,35 @@
           <div class="suite-eCommerce_Suite_Test-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">com.juaracoding.ecommerce.authentications.SignInNegativeTest</span>
+              <span class="class-name">com.juaracoding.ecommerce.commons.RadioCheckboxTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="withEmptyPasswordTest">
-                  </a> <!-- withEmptyPasswordTest -->
-                  <span class="method-name">withEmptyPasswordTest</span>
+                  <a name="checkBoxTest">
+                  </a> <!-- checkBoxTest -->
+                  <span class="method-name">checkBoxTest</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="withoutCredentialsTest">
-                  </a> <!-- withoutCredentialsTest -->
-                  <span class="method-name">withoutCredentialsTest</span>
+                  <a name="checkBoxsTest">
+                  </a> <!-- checkBoxsTest -->
+                  <span class="method-name">checkBoxsTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="radioButtonTest">
+                  </a> <!-- radioButtonTest -->
+                  <span class="method-name">radioButtonTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="radioButtonsTest">
+                  </a> <!-- radioButtonsTest -->
+                  <span class="method-name">radioButtonsTest</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -155,11 +179,11 @@
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite name=&quot;eCommerce Suite Test&quot; guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot;&gt;
-  &lt;test thread-count=&quot;5&quot; name=&quot;Authentication Test&quot; verbose=&quot;0&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;Common Test&quot; verbose=&quot;0&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.juaracoding.ecommerce.authentications.SignInNegativeTest&quot;/&gt;
+      &lt;class name=&quot;com.juaracoding.ecommerce.commons.RadioCheckboxTest&quot;/&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- Authentication Test --&gt;
+  &lt;/test&gt; &lt;!-- Common Test --&gt;
 &lt;/suite&gt; &lt;!-- eCommerce Suite Test --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -171,7 +195,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Authentication Test (1 class)</span>
+                <span class="test-name">Common Test (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -197,20 +221,28 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(2);
+data.addRows(4);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'withEmptyPasswordTest')
-data.setCell(0, 2, 'com.juaracoding.ecommerce.authentications.SignInNegativeTest')
-data.setCell(0, 3, 105017);
+data.setCell(0, 1, 'checkBoxsTest')
+data.setCell(0, 2, 'com.juaracoding.ecommerce.commons.RadioCheckboxTest')
+data.setCell(0, 3, 597);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'withoutCredentialsTest')
-data.setCell(1, 2, 'com.juaracoding.ecommerce.authentications.SignInNegativeTest')
-data.setCell(1, 3, 7588);
+data.setCell(1, 1, 'radioButtonsTest')
+data.setCell(1, 2, 'com.juaracoding.ecommerce.commons.RadioCheckboxTest')
+data.setCell(1, 3, 422);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'checkBoxTest')
+data.setCell(2, 2, 'com.juaracoding.ecommerce.commons.RadioCheckboxTest')
+data.setCell(2, 3, 181);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'radioButtonTest')
+data.setCell(3, 2, 'com.juaracoding.ecommerce.commons.RadioCheckboxTest')
+data.setCell(3, 3, 105);
 window.suiteTableData['eCommerce_Suite_Test']= { tableData: data, tableDiv: 'times-div-eCommerce_Suite_Test'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 minutes</span>
+              <span class="suite-total-time">Total running time: 1 seconds</span>
               <div id="times-div-eCommerce_Suite_Test">
               </div> <!-- times-div-eCommerce_Suite_Test -->
             </div> <!-- times-div -->
@@ -225,16 +257,9 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-eCommerce_Suite_Test" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">1 ignored method</span>
+            <span class="header-content">0 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
-            <div class="ignored-class-div">
-              <span class="ignored-class-name">com.juaracoding.ecommerce.authentications.SignInNegativeTest</span>
-              <div class="ignored-methods-div">
-                <span class="ignored-method-name">withEmptyUsernameTest</span>
-                <br/>
-              </div> <!-- ignored-methods-div -->
-            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-eCommerce_Suite_Test" class="panel">
@@ -243,15 +268,55 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.juaracoding.ecommerce.authentications.SignInNegativeTest</div> <!-- chronological-class-name -->
-              <div class="test-method">
-                <span class="method-name">withEmptyPasswordTest</span>
+              <div class="chronological-class-name">com.juaracoding.ecommerce.commons.RadioCheckboxTest</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeMethod</span>
                 <span class="method-start">0 ms</span>
-              </div> <!-- test-method -->
+              </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">withoutCredentialsTest</span>
-                <span class="method-start">105023 ms</span>
+                <span class="method-name">checkBoxTest</span>
+                <span class="method-start">10862 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod</span>
+                <span class="method-start">11046 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeMethod</span>
+                <span class="method-start">11412 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">checkBoxsTest</span>
+                <span class="method-start">17265 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod</span>
+                <span class="method-start">17863 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeMethod</span>
+                <span class="method-start">18428 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">radioButtonTest</span>
+                <span class="method-start">26029 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod</span>
+                <span class="method-start">26134 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeMethod</span>
+                <span class="method-start">26445 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">radioButtonsTest</span>
+                <span class="method-start">34780 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod</span>
+                <span class="method-start">35202 ms</span>
+              </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->

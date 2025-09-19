@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 
 public class AppTest 
 {
-    private WebDriver driver;
+   private WebDriver driver;
 
     @BeforeClass
     public void setup() {
@@ -44,4 +44,3 @@ public class AppTest
         driver.close();
     }
 }
-

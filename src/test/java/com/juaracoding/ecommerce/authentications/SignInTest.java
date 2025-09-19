@@ -1,46 +1,60 @@
 package com.juaracoding.ecommerce.authentications;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class SignInTest {
-  private WebDriver driver;
+import com.juaracoding.ecommerce.BaseTest;
 
-    @BeforeClass
-    public void setup(){
-        driver = new ChromeDriver();
-        driver.get("https://www.saucedemo.com/v1/");
-    }
-    
-    @Test
-    public void signInTest()throws InterruptedException{
-      WebElement usernameField = driver.findElement(By.id("user-name"));
-        WebElement passwordField = driver.findElement(By.id("password"));
-        WebElement button = driver.findElement(By.id("login-button"));
+public class SignInTest extends BaseTest{
+  @Test
+  public void withoutCredentialsTest() {
+    WebElement button = getDriver().findElement(By.id("login-button"));
+    button.click();
 
-        usernameField.sendKeys("standard_user");
-        Thread.sleep(2000);
-        passwordField.sendKeys("secret_sauce");
-        Thread.sleep(2000);
-        button.click();
+    WebElement errorElement = getDriver().findElement(By.cssSelector("[data-test='error']"));
+    String actual = errorElement.getText();
+    String expected = "Epic sadface: Username is required";
 
-        String actual = driver.getCurrentUrl();
-        String expected = "https://www.saucedemo.com/v1/inventory.html";
+    Assert.assertEquals(actual, expected);
+  }
 
-        Assert.assertEquals(actual, expected);
-    }
+  @Test
+  public void withEmptyPasswordTest() {
+    WebElement button = getDriver().findElement(By.id("login-button"));
+    WebElement usernameField = getDriver().findElement(By.id("user-name"));
 
-    @AfterClass
-    public void teardown() throws InterruptedException {
-        Thread.sleep(4000);
-        driver.close();
-    }
+    usernameField.sendKeys("standard_user");
+    button.click();
 
+    WebElement errorElement = getDriver().findElement(By.cssSelector("[data-test='error']"));
+    String actual = errorElement.getText();
+    String expected = "Epic sadface: Password is required";
+
+    Assert.assertEquals(actual, expected);
+
+  }
+
+  @Test()
+  public void signInTest() throws InterruptedException {
+    WebElement usernameField = getDriver().findElement(By.id("user-name"));
+    WebElement passwordField = getDriver().findElement(By.id("password"));
+    WebElement button = getDriver().findElement(By.id("login-button"));
+
+    usernameField.sendKeys("standard_user");
+    passwordField.sendKeys("secret_sauce");
+    button.click();
+
+    String actual = getDriver().getCurrentUrl();
+    String expected = "https://www.saucedemo.com/v1/inventory.html";
+
+    Assert.assertEquals(actual, expected);
+  }
+
+  @Test(enabled = false)
+  public void withEmptyUsernameTest() {
+
+  }
 
 }
