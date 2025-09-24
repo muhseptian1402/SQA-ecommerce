@@ -1,1 +1,4 @@
+com\juaracoding\ecommerce\pages\SignInPage.class
+com\juaracoding\ecommerce\pages\DragDropPage.class
 com\juaracoding\ecommerce\App.class
+com\juaracoding\ecommerce\pages\LoginPage.class

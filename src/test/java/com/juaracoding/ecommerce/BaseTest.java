@@ -4,6 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
+
 
 public class BaseTest {
 private WebDriver driver;
@@ -13,9 +15,10 @@ private WebDriver driver;
   }
 
   @BeforeMethod
-  public void setup () {
+  @Parameters ("baseURL")
+  public void setup (String baseURL) {
     driver = new ChromeDriver();
-    driver.get("https://www.saucedemo.com/v1/");
+    driver.get(baseURL);
   }
 
   @AfterMethod

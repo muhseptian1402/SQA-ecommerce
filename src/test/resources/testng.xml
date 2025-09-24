@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="eCommerce Suite Test" >
-  <test name="Authentication Test" enabled="false">
+<parameter name="baseURL" value="https://jquery-drag-drop-demo.webflow.io/"></parameter>
+  <test name="Authentication Test">
+  <parameter name="bgBefore" value="rgb(255, 149, 144)"></parameter>
+    <parameter name="bgAfter" value="rgb(255, 250, 144)"></parameter>
     <classes>
-      <class name="com.juaracoding.ecommerce.authentications.SignInTest"></class>
+      <class name="com.juaracoding.ecommerce.commons.DragDropTest"></class>
       <!-- <class name="com.juaracoding.ecommerce.authentications.SignInTest"></class> -->
     </classes>
   </test>
 
-  <test name="Common Test" enabled="true">
+  <test name="Common Test" enabled="false">
     <classes>
       <class name="com.juaracoding.ecommerce.commons.RadioCheckboxTest"></class>
     </classes>

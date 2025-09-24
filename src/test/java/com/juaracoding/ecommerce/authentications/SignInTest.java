@@ -1,50 +1,41 @@
 package com.juaracoding.ecommerce.authentications;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.juaracoding.ecommerce.BaseTest;
+import com.juaracoding.ecommerce.pages.LoginPage;
 
 public class SignInTest extends BaseTest{
   @Test
   public void withoutCredentialsTest() {
-    WebElement button = getDriver().findElement(By.id("login-button"));
-    button.click();
+    LoginPage loginPage = new LoginPage(getDriver());
+    loginPage.clickButtonLogin();
 
-    WebElement errorElement = getDriver().findElement(By.cssSelector("[data-test='error']"));
-    String actual = errorElement.getText();
     String expected = "Epic sadface: Username is required";
-
-    Assert.assertEquals(actual, expected);
+    Assert.assertEquals(loginPage.getErrorMessage(), expected);
   }
 
   @Test
   public void withEmptyPasswordTest() {
-    WebElement button = getDriver().findElement(By.id("login-button"));
-    WebElement usernameField = getDriver().findElement(By.id("user-name"));
+    LoginPage loginPage = new LoginPage(getDriver());
 
-    usernameField.sendKeys("standard_user");
-    button.click();
+    loginPage.fillUsername("standard_user");
+    loginPage.clickButtonLogin();
 
-    WebElement errorElement = getDriver().findElement(By.cssSelector("[data-test='error']"));
-    String actual = errorElement.getText();
     String expected = "Epic sadface: Password is required";
 
-    Assert.assertEquals(actual, expected);
+    Assert.assertEquals(loginPage.getErrorMessage(), expected);
 
   }
 
   @Test()
   public void signInTest() throws InterruptedException {
-    WebElement usernameField = getDriver().findElement(By.id("user-name"));
-    WebElement passwordField = getDriver().findElement(By.id("password"));
-    WebElement button = getDriver().findElement(By.id("login-button"));
+    LoginPage loginPage = new LoginPage(getDriver());
 
-    usernameField.sendKeys("standard_user");
-    passwordField.sendKeys("secret_sauce");
-    button.click();
+    loginPage.fillUsername("standard_user");
+    loginPage.fillPassword("secret_sauce");
+    loginPage.clickButtonLogin();
 
     String actual = getDriver().getCurrentUrl();
     String expected = "https://www.saucedemo.com/v1/inventory.html";
